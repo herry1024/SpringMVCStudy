@@ -10,6 +10,7 @@ import com.mvnbook.model.User;
 @Service("userService")
 public interface UserService {
 
-		User getUserById(int id);
+		User getUserById(Integer id);
 		List<User> getAllUsers();
+		User getUserByPassword(String name,String password);
 }

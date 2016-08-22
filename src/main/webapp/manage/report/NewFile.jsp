@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-fuck
+This is NewFile
 </body>
 </html>
