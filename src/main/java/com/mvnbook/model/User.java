@@ -8,6 +8,7 @@ public class User implements Serializable {
 		private int id;
 		private String name;
 		private int age;
+		private String password;
 		public int getId() {
 			return id;
 		}
@@ -25,5 +26,11 @@ public class User implements Serializable {
 		}
 		public void setAge(int age) {
 			this.age = age;
+		}
+		public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
 		}
 }

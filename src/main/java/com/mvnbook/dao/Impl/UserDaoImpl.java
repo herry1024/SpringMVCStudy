@@ -2,6 +2,7 @@ package com.mvnbook.dao.Impl;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,13 @@ public class UserDaoImpl implements UserMapper {
 		logger.info("UserDaoImpl login");
 		return userMapper.getUserByPassword(name, password);
 	}
+
+	@Override
+	public void UpdateUserById(@Param("id") Integer id) {
+		
+		
+	}
+	
+	
 
 }

@@ -12,4 +12,6 @@ public interface UserMapper {
 	User getUserById(@Param("id") Integer id);
 	List<User> getAllUsers();
 	User getUserByPassword(@Param("name") String name,@Param("password") String password);
+	
+	void UpdateUserById(@Param("id") Integer id);
 }

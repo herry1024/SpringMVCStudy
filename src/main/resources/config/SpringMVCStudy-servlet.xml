@@ -80,18 +80,25 @@
 	<mvc:resources mapping="/styles/**" location="/resources/css/" />
 	<mvc:resources mapping="/images/**" location="/resources/images/" />
 
-<!-- 	<beans:bean	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/"></beans:property>
-		<beans:property name="suffix" value=".jsp">	</beans:property>
-	</beans:bean> -->
+	<!-- <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<beans:property name="prefix" value="/WEB-INF/views/"></beans:property> <beans:property 
+		name="suffix" value=".jsp"> </beans:property> </beans:bean> -->
 
-	<beans:bean	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="viewClass" value="org.springframework.web.servlet.view.JstlView" ></beans:property>
-		<beans:property name="prefix" value="" ></beans:property>
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView"></beans:property>
+		<beans:property name="prefix" value=""></beans:property>
 		<beans:property name="suffix" value=".jsp"></beans:property>
 	</beans:bean>
-	
-	
-	
+
+	<!-- 多部分文件上传 -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="104857600"></beans:property>
+		<beans:property name="maxInMemorySize" value="4096"></beans:property>
+		<beans:property name="defaultEncoding" value="UTF-8"></beans:property>
+	</beans:bean>
+
 </beans:beans>
 

@@ -25,7 +25,7 @@
 	</select>
 	<select id="getUserByPassword" resultType="com.mvnbook.model.User">
 		select
-		id,name,age
+		id,name,age,password
 		from user
 		where 1=1
 		and name = #{name}
