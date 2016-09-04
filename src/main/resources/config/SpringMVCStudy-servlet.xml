@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
 
-
+	<!-- 返回Json格式数据的配置 -->
 	<beans:bean class="com.mvnbook.handler.FastJsonMessageConverterExtends"
 		name="converter" id="converter">
 		<beans:property name="serializerFeature">
@@ -46,11 +46,12 @@
 
 
 
-
+	<!-- 配置controller需要扫描的包 -->
 	<context:component-scan base-package="com.mvnbook.controller" />
 
 	<resources mapping="/favicon.ico" location="/favicon.ico" />
 
+	<!-- 配置需要调用的公共返回result -->
 	<annotation-driven>
 		<message-converters register-defaults="true">
 			<beans:ref bean="converter" />
@@ -75,7 +76,8 @@
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"> 
 		<beans:property name="useSuffixPatternMatch" value="false"></beans:property> 
 		</beans:bean> -->
-
+	
+	<!-- 配置需要的静态资源文件目录 -->
 	<mvc:resources mapping="/javascript/**" location="/resources/js/" />
 	<mvc:resources mapping="/styles/**" location="/resources/css/" />
 	<mvc:resources mapping="/images/**" location="/resources/images/" />
@@ -83,7 +85,8 @@
 	<!-- <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 		<beans:property name="prefix" value="/WEB-INF/views/"></beans:property> <beans:property 
 		name="suffix" value=".jsp"> </beans:property> </beans:bean> -->
-
+	
+	<!-- 配置对应的jsp视图解析器 -->
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="viewClass"
